@@ -2,9 +2,14 @@ FROM python:3.10
 
 LABEL authors="YongGyu"
 
+RUN apt-get update && apt-get install -y fonts-nanum
+
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements_docker.txt .
+RUN pip install --no-cache-dir -r requirements_docker.txt
 COPY app/ .
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
