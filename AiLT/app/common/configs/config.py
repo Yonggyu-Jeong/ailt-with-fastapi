@@ -1,14 +1,14 @@
 from dataclasses import dataclass
 from pathlib import Path
+from app.common.logger.logger import logger
 import json
 
-# JSON 유형의 외부 참조 파일을 읽어오는 코드 config_file로 반환
+# JSON 유형의 외부 참조 파일을 읽어오는 코드 config_file 별칭 이용
 with open('./app/config.json', 'r') as config_file:
     config = json.load(config_file)
 
 # BASE_DIR 변수 선언
 base_dir = Path(__file__).resolve().parent.parent
-
 
 """
     class Config:
@@ -33,7 +33,7 @@ class DbConfig:
             config = json.load(config_file)
 
     except:
-        print("Error reading config.json, set it to local host setting")
+        logger.info("Error reading config.json, set it to local host setting")
         DB_URL: str = "mongodb://localhost:27017"
         DB_HOST: str = "localhost"
         DB_PORT: int = 27017

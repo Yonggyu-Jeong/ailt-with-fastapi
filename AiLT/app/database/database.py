@@ -1,7 +1,8 @@
 from pymongo import MongoClient
 from app.common.configs.config import DbConfig
+from app.common.logger.logger import logger
 
-#TODO 공식 문서 다시 확인
+# TODO 공식 문서 다시 확인
 # https://mongodb.github.io/node-mongodb-native/api-generated/mongoclient.html
 # https://pymongo.readthedocs.io/en/stable/tutorial.html
 
@@ -31,8 +32,10 @@ class Database:
         self.config = config
         self.connection = self.create_connection()
 
+    #TODO mongodb 권한 추가
     def create_connection(self):
         if self.config.LOCAL_CHECK == 0:
+            logger.info("Connecting to server")
             return MongoClient(#username=self.config.DB_USER,
                                #password=self.config.DB_PASSWORD,
                                host=self.config.DB_HOST,
@@ -40,6 +43,7 @@ class Database:
                                ssl=self.config.DB_SSL)
 
         else:
+            logger.info("Connecting to server using local mode")
             return MongoClient(host=self.config.DB_HOST,
                                port=self.config.DB_PORT)
 
@@ -57,3 +61,4 @@ class Database:
 
         except Exception as e:
             print(f"Connection error: {e}")
+
