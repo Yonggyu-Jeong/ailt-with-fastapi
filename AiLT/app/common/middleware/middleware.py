@@ -1,9 +1,7 @@
-import time
 from fastapi import FastAPI, Request
-from fastapi.middleware.trustedhost import TrustedHostMiddleware
 app = FastAPI()
 
-# 참조 문서 https://fastapi.tiangolo.com/advanced/middleware/
+# 참조 문서 TODO https://docs.python.org/ko/3/howto/logging.html, https://fastapi.tiangolo.com/advanced/middleware/
 
 #TODO 작성 중 토큰, 쿠키 기능 예정
 #TODO DB 작업 이후 할 예정
@@ -16,10 +14,11 @@ app = FastAPI()
     작성자 : 정용규
     작성일 : 2024. 01. 14     
 """
+"""
 @app.middleware("http")
 async def prev_process_recodring(request: Request):
     client_host = request.client.host
-
+"""
 
 #TODO IP호스팅 후 추가할 미들 웨어
 """
