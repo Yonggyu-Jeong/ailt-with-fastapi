@@ -2,6 +2,7 @@ from fastapi import Depends
 from app.common.configs.config import DbConfig
 from app.services.user_service import UserService
 from app.database.database import Database
+from tests.user_test.test_user_service import TestUserService
 
 # main.py에 의존성 주입
 
@@ -33,3 +34,7 @@ def get_database() -> Database:
 
 def get_user_service(database: Database = Depends(get_database)) -> UserService:
     return UserService(database)
+
+
+def get_test_user_service(database: Database = Depends(get_database)) -> TestUserService:
+    return TestUserService(database)
