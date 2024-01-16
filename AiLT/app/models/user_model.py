@@ -11,5 +11,6 @@ from app.models.model import ModelDto
 
 
 class UserDto(ModelDto):
-    username: str
-    email: str
+    id: int
+    age: int
+    gender: int
