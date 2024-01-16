@@ -1,23 +1,33 @@
-from app.models.user_model import UserDto
 from app.database.database import Database
-from app.common.logger.logger import logger
 
-
+# TODO 가비지 데이터를 제공하는 스텁, user_service와 값을 비교한 함수 별도 개발 예정.
 class TestUserService:
     def __init__(self, database: Database):
         self.database = database
 
-    def create_user(self, user_data: UserDto):
-        return self.database.insert_collection("users", user_data)
+    def get_user(self):
+        garbage_data = {"user_id": 1, "name": "John Doe"}
 
-    def get_user(self, user_id: int):
-        return self.database.select_collection("users", {"user_id": user_id})
+        return garbage_data
 
     def get_users(self):
-        return self.database.select_collections("users", {})
+        garbage_data_list = [{"user_id": 1, "name": "John Doe"}, {"user_id": 2, "name": "Jane Doe"}]
 
-    def update_user(self, user_id: int, user_data: UserDto):
-        return self.database.update_collection("users", {"user_id": user_id}, user_data)
+        return garbage_data_list
 
-    def delete_user(self, user_id: int):
-        return self.database.delete_collection("users", {"user_id": user_id})
+    def put_user(self):
+        garbage_data = {"acknowledged": True, "matched_count": 1, "modified_count": 1}
+
+        return garbage_data
+
+    def patch_user(self):
+        garbage_data = {"acknowledged": True, "matched_count": 1, "modified_count": 1}
+        return garbage_data
+
+    def insert_user(self):
+        garbage_data = {"acknowledged": True, "inserted_id": 'ObjectId'("60d6f8c00a360a4d477f869a")}
+        return garbage_data
+
+    def delete_user(self):
+        garbage_data = {"acknowledged": True, "deleted_count": 1}
+        return garbage_data
