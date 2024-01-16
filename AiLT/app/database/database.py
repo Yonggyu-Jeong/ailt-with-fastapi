@@ -77,27 +77,27 @@ class Database:
             logger.error(f"Connection error: {e}")
 
     # TODO DTO의 부모 클래스로부터 상속 받은 클래스 사용 가능하도록 수정.
-    def insert_document(self, collection_name, dto: ModelDto):
+    def insert_collection(self, collection_name, dto: ModelDto):
         collection = self.connection[collection_name]
         result = collection.insert_one(dto.model_dump())
         return str(result.inserted_id)
 
-    def find_document(self, collection_name, query):
+    def select_collection(self, collection_name, query):
         collection = self.connection[collection_name]
         document = collection.find_one(query)
         return document
 
-    def find_documents(self, collection_name, query):
+    def select_collections(self, collection_name, query):
         collection = self.connection[collection_name]
         documents = collection.find(query)
         return list(documents)
 
-    def update_document(self, collection_name, query, dto: ModelDto):
+    def update_collection(self, collection_name, query, dto: ModelDto):
         collection = self.connection[collection_name]
         result = collection.update_one(query, {"$set": dto})
         return result.modified_count > 0
 
-    def delete_document(self, collection_name, query):
+    def delete_collection(self, collection_name, query):
         collection = self.connection[collection_name]
         result = collection.delete_one(query)
         return result.deleted_count > 0
