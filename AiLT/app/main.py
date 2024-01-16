@@ -1,8 +1,6 @@
 from fastapi import FastAPI, Depends
 import uvicorn
 import app.common.dependencies.dependency as dependency
-from app.common.configs.config import DbConfig
-from app.database.database import Database
 from app.routers import user_router
 
 """
@@ -21,9 +19,14 @@ app = FastAPI()
 database = dependency.get_database()
 # TODO 미들웨어 세팅 app.add_middleware()
 
-app.include_router(user_router.router_user, prefix="/users", tags=["users"],
-                   dependencies=[Depends(dependency.get_user_service(database))])
-database = Database(DbConfig())
+# TODO 기존 방식으로 TDD 구현시, 기존 dependency 추가 및 추가 코드 필요.
+#  router에서 초기화시, 함수의 요청 횟수만큼 초기화되는 일이 발생. 고민 필요.
+
+
+# TODO depend()는 애플리케이션이 실행되는 동안 한 번 초기화되고 재사용, 그러므로 라우터에서 초기화 가능
+#  라우터 전역 의존성에 대해 알아보기. -> app.include에서 의존성 주입 삭제
+
+app.include_router(user_router.router_user, prefix="/users", tags=["users"])
 
 
 @app.get("/")
