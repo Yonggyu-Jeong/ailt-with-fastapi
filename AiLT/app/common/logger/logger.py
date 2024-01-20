@@ -10,7 +10,8 @@ import datetime
     작성일 : 2024. 01. 14 
 """
 
-# TODO logger파일을 부모 클래스에 등록해서 다른 클래스 상속 방식 고려.
+# TODO logger파일을 부모 클래스에 등록해서 다른 클래스 상속 방식 고려. ->
+#  부모 클래스에 필요 없는 모듈 상속 및 컬렉션 등 유틸 개발 미비
 
 # 다중 핸들러 방식 사용, common_logger로 정의, DEBUG 이상 레벨 지정
 logger = logging.getLogger("common_logger")
