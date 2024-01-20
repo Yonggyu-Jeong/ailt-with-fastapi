@@ -4,7 +4,7 @@ from app.common.logger.logger import logger
 
 
 # TODO 로그 기록 방법 통일화. 로거에서 디폴트 메세지 정의 ->
-#  별도로 성공 여부 포맷까지 지정시 사용 번거로움 보류. 
+#  별도로 성공 여부 포맷까지 지정시 사용 번거로움 보류.
 class UserService:
     def __init__(self, database: Database):
         self.database = database

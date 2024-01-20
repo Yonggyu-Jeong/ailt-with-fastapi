@@ -3,7 +3,8 @@ from app.common.configs.config import DbConfig
 from app.common.logger.logger import logger
 from app.models.model import ModelDto
 
-# TODO 공식 문서 다시 확인
+# TODO db를 정의하는 database를 부모 클래스로 수정,
+#  connection에 상속하는 방법 검토.
 # https://mongodb.github.io/node-mongodb-native/api-generated/mongoclient.html
 # https://pymongo.readthedocs.io/en/stable/tutorial.html
 
