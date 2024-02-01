@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a583607-6c09-469d-b047-cff0302229cb" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/generative-ai/llm-lama2/llm_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/common/configs/custom_model_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generative/image/image_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generative/llm-lama2/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generative-ai/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/configs/generative_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generative-ai/generative-image/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generative-ai/llm-lama2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/image/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generative-ai/llm-lama2/llm_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/llm-lama2/llm_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/user_test/test_user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_test/test_user_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +73,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "ailt-with-ml",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/PR/KoAlpaca-main",
+    "last_opened_file_path": "C:/PR/ailt-with-fastapi/AiLT/app/common/configs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,6 +85,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PR\ailt-with-fastapi\AiLT\app\common\configs" />
+      <recent name="C:\PR\ailt-with-fastapi\AiLT\generative-ai\llm-lama2" />
       <recent name="C:\PR\ailt-with-fastapi\AiLT\tests\user_test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -128,7 +138,11 @@
       <workItem from="1705394114215" duration="15445000" />
       <workItem from="1705474812023" duration="2998000" />
       <workItem from="1706080545419" duration="2320000" />
-      <workItem from="1706091519644" duration="275000" />
+      <workItem from="1706091519644" duration="1540000" />
+      <workItem from="1706519380890" duration="653000" />
+      <workItem from="1706698313044" duration="15000" />
+      <workItem from="1706772082382" duration="1858000" />
+      <workItem from="1706781384769" duration="958000" />
     </task>
     <servers />
   </component>
@@ -162,9 +176,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AiLT$app.coverage" NAME="app 커버리지 결과" MODIFIED="1704963408173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads/KoAlpaca-main/KoAlpaca-main/webui" />
     <SUITE FILE_PATH="coverage/AiLT$user.coverage" NAME="user 커버리지 결과" MODIFIED="1704964640156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/routers" />
-    <SUITE FILE_PATH="coverage/AiLT$llm_test.coverage" NAME="llm_test 커버리지 결과" MODIFIED="1706091692924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/generative-ai/llm-lama2" />
+    <SUITE FILE_PATH="coverage/AiLT$llm_test.coverage" NAME="llm_test 커버리지 결과" MODIFIED="1706773208067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/generative-ai/llm-lama2" />
     <SUITE FILE_PATH="coverage/AiLT$webui.coverage" NAME="webui 커버리지 결과" MODIFIED="1706090215024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../WEBUI0.66.2/stable-diffusion-webui" />
-    <SUITE FILE_PATH="coverage/AiLT$ailt_main.coverage" NAME="ailt_main 커버리지 결과" MODIFIED="1705736473278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/AiLT$ailt_main.coverage" NAME="ailt_main 커버리지 결과" MODIFIED="1706781730763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/AiLT$main.coverage" NAME="main 커버리지 결과" MODIFIED="1704964973844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>
