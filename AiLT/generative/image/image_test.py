@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Depends, UploadFile, APIRouter
+from fastapi import HTTPException, Depends, UploadFile, APIRouter
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 import torch
@@ -6,10 +6,7 @@ from PIL import Image
 from io import BytesIO
 import base64
 import diffusers
-import uvicorn
 import json
-
-router_image = APIRouter()
 
 
 class Config:
@@ -57,22 +54,21 @@ class TaskParams(BaseModel):
     strength: float = 0.7
 
 
-def pil_to_b64(input):
+def pil_to_b64(pil_input):
     buffer = BytesIO()
-    input.save(buffer, 'PNG')
+    pil_input.save(buffer, 'PNG')
     output = base64.b64encode(buffer.getvalue()).decode('utf-8').replace('\n', '')
     buffer.close()
     return output
 
 
-def b64_to_pil(input):
-    output = Image.open(BytesIO(base64.b64decode(input)))
+def b64_to_pil(b64_input):
+    output = Image.open(BytesIO(base64.b64decode(b64_input)))
     return output
 
 
-def get_compute_platform(context):
+def is_cuda_available():
     try:
-        import torch
         if torch.cuda.is_available():
             return 'cuda'
         else:
@@ -112,7 +108,7 @@ class EngineStableDiffusion(Engine):
                 safety_checker=sibling.engine.safety_checker,
                 feature_extractor=sibling.engine.feature_extractor
             )
-        self.engine.to(get_compute_platform('engine'))
+        self.engine.to(is_cuda_available())
 
     def process(self, kwargs):
         output = self.engine(**kwargs)
@@ -139,50 +135,7 @@ class EngineManager(object):
         return engine
 
 
-@router_image.get('/')
-def root():
-    return {"message": "Hello World"}
-
-
-@router_image.get('/home')
-def home():
-    return {"message": "Hello World"}
-
-
-@router_image.get('/ping')
-async def stable_ping():
-    return JSONResponse(content={'status': 'success'})
-
-
-@router_image.get('/custom_models')
-async def stable_custom_models(config: Config = Depends(get_config)):
-    if config.custom_models is None:
-        return JSONResponse(content=[])
-    else:
-        return JSONResponse(content=config.custom_models)
-
-
-@router_image.post('/txt2img')
-async def stable_txt2img(params: TaskParams = Depends(), manager: EngineManager = Depends(get_manager)):
-    return await _generate('txt2img', params, manager)
-
-
-@router_image.post('/img2img')
-async def stable_img2img(params: TaskParams = Depends(), manager: EngineManager = Depends(get_manager)):
-    return await _generate('img2img', params, manager)
-
-
-@router_image.post('/masking')
-async def stable_masking(params: TaskParams = Depends(), manager: EngineManager = Depends(get_manager)):
-    return await _generate('masking', params, manager)
-
-
-@router_image.post('/custom/{model}')
-async def stable_custom(model: str, params: TaskParams = Depends(), manager: EngineManager = Depends(get_manager)):
-    return await _generate('txt2img', params, manager, model)
-
-
-async def _generate(task: str, params: TaskParams, manager: EngineManager, model: str = None):
+async def dream(task: str, params: TaskParams, manager: EngineManager):
     engine = manager.get_engine(task)
     output_data = {}
 
@@ -190,21 +143,23 @@ async def _generate(task: str, params: TaskParams, manager: EngineManager, model
         total_results = []
         for i in range(params.num_outputs):
             new_seed = params.seed if params.seed == 0 else torch.Generator(
-                device=get_compute_platform('generator')).manual_seed(params.seed).seed()
+                device=is_cuda_available()).manual_seed(params.seed).seed()
             args_dict = {
                 'prompt': [params.prompt] if params.prompt else None,
                 'num_inference_steps': params.num_inference_steps,
                 'guidance_scale': params.guidance_scale,
                 'eta': params.eta,
-                'generator': torch.Generator(device=get_compute_platform('generator')),
+                'generator': torch.Generator(device=is_cuda_available()),
             }
             if task == 'txt2img':
                 args_dict['width'] = params.width
                 args_dict['height'] = params.height
+
             if task == 'img2img' or task == 'masking':
                 init_img_pil = b64_to_pil(params.init_image.file.read()) if params.init_image else None
                 args_dict['init_image'] = init_img_pil
                 args_dict['strength'] = params.strength
+
             if task == 'masking':
                 mask_img_pil = b64_to_pil(params.mask_image.file.read()) if params.mask_image else None
                 args_dict['mask_image'] = mask_img_pil
@@ -233,5 +188,5 @@ async def _generate(task: str, params: TaskParams, manager: EngineManager, model
     return JSONResponse(content=output_data)
 
 
-config = get_config()
-manager = get_manager(config)
+engine_config = get_config()
+engine_manager = get_manager(engine_config)
