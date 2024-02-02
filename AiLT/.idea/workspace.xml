@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a583607-6c09-469d-b047-cff0302229cb" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/app/common/configs/custom_model_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generative/image/image_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generative/llm-lama2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generative/image/image_def.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generative/llm/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generative/llm/llm_router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generative-ai/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/configs/generative_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generative-ai/generative-image/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generative-ai/llm-lama2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/image/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generative-ai/llm-lama2/llm_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/llm-lama2/llm_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generative/image/image_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/image/image_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generative/llm-lama2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/image/image_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generative/llm-lama2/llm_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/llm/llm_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/user_test/test_user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_test/test_user_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +72,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "ailt-with-ml",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/PR/ailt-with-fastapi/AiLT/app/common/configs",
+    "last_opened_file_path": "C:/PR/ailt-with-fastapi/AiLT/generative/image",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,6 +84,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PR\ailt-with-fastapi\AiLT\generative\image" />
       <recent name="C:\PR\ailt-with-fastapi\AiLT\app\common\configs" />
       <recent name="C:\PR\ailt-with-fastapi\AiLT\generative-ai\llm-lama2" />
       <recent name="C:\PR\ailt-with-fastapi\AiLT\tests\user_test" />
@@ -143,6 +143,7 @@
       <workItem from="1706698313044" duration="15000" />
       <workItem from="1706772082382" duration="1858000" />
       <workItem from="1706781384769" duration="958000" />
+      <workItem from="1706860913717" duration="3132000" />
     </task>
     <servers />
   </component>
@@ -169,6 +170,10 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/common/logger/logger.py</url>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/generative/image/image_test.py</url>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
