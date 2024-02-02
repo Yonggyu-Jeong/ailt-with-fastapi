@@ -3,7 +3,7 @@ from fastapi import FastAPI
 
 import app.common.dependencies.dependency as dependency
 from app.routers import user_router
-from generative.image import image_test
+from generative.image import image_service
 
 """
     fast-api를 구동시 미들웨어 정의, 데이터베이스 초기화, 라우터 정의 합니다.
