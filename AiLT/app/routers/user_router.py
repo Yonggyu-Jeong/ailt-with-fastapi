@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from app.models.user_model import UserDto
-from app.common.dependencies.dependency import get_test_user_service as get_user_service
-from tests.user_test.test_user_service import TestUserService as UserService
+#from app.common.dependencies.dependency import get_test_user_service as get_user_service
+#from tests.user_test.test_user_service import TestUserService as UserService
+from app.common.dependencies.dependency import get_user_service
+from app.services.user_service import UserService
 
-# from app.common.dependencies.dependency import get_user_service
-# from app.services.user_service import UserService
 router_user = APIRouter()
 
 

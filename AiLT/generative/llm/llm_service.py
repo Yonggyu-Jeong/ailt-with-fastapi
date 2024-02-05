@@ -1,25 +1,11 @@
 import torch
 from transformers import pipeline, AutoModelForCausalLM
+from generative.llm.llm_def import pipe, model
 
-#TODO torch 및 cuda setup
-
+# TODO torch 및 cuda setup
 print(torch.cuda.is_available())
-
-MODEL = 'beomi/KoAlpaca-Polyglot-5.8B'
-
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL,
-    torch_dtype=torch.float16,
-    low_cpu_mem_usage=True,
-).to(device=f"cuda", non_blocking=True)
 model.eval()
 
-pipe = pipeline(
-    'text-generation',
-    model=model,
-    tokenizer=MODEL,
-    device=0
-)
 
 def ask(x, context='', is_input_full=False):
     ans = pipe(
@@ -32,6 +18,3 @@ def ask(x, context='', is_input_full=False):
         eos_token_id=2,
     )
     print(ans[0]['generated_text'])
-
-
-ask("딥러닝이 뭐야?")

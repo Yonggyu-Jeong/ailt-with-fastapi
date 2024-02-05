@@ -88,7 +88,7 @@ class EngineManager(object):
 
 def get_img_config():
     try:
-        config_file = open('config.json', 'r')
+        config_file = open('./app/common/configs/image_token_config.json', 'r')
         config_data = json.loads(config_file.read())
         return ImgConfig(hf_token=config_data.get('hf_token'), custom_models=config_data.get('custom_models', []))
     except FileNotFoundError:

@@ -1,7 +1,6 @@
 from fastapi import HTTPException
 from fastapi.responses import JSONResponse
 import torch
-
 from generative.image.image_def import (TaskParams, EngineManager,
                                         is_cuda_available, pil_to_b64, b64_to_pil)
 
@@ -57,4 +56,3 @@ async def dream(task: str, params: TaskParams, manager: EngineManager):
         raise HTTPException(status_code=500, detail=output_data)
 
     return JSONResponse(content=output_data)
-
