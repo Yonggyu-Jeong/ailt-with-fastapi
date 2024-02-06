@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a583607-6c09-469d-b047-cff0302229cb" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/generative/configs/custom_model_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generative/configs/image_token_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generative/generative_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/common/dependencies/dependency.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/dependencies/dependency.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routers/ml_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/configs/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generative/llm/llm_def.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/llm/llm_def.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generative/llm/llm_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/llm/llm_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generative/llm/llm_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/generative/llm/llm_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error_log_2024-01-15.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error_log_2024-01-16.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error_log_2024-01-20.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/user_test/test_user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_test/test_user_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +67,7 @@
   "keyToString": {
     "FastAPI.ailt_main.executor": "Run",
     "Python.app.executor": "Run",
+    "Python.llm_def_test.executor": "Run",
     "Python.llm_test.executor": "Run",
     "Python.main.executor": "Run",
     "Python.user.executor": "Run",
@@ -70,7 +76,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "ailt-with-ml",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/PR/ailt-with-fastapi/AiLT/generative/llm",
+    "last_opened_file_path": "C:/PR/ailt-with-fastapi/AiLT/generative",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,11 +88,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PR\ailt-with-fastapi\AiLT\generative" />
       <recent name="C:\PR\ailt-with-fastapi\AiLT\generative\llm" />
       <recent name="C:\PR\ailt-with-fastapi\AiLT\generative\image" />
       <recent name="C:\PR\ailt-with-fastapi\AiLT\app\common\configs" />
       <recent name="C:\PR\ailt-with-fastapi\AiLT\generative-ai\llm-lama2" />
-      <recent name="C:\PR\ailt-with-fastapi\AiLT\tests\user_test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\PR\ailt-with-fastapi\AiLT\app\common" />
@@ -144,7 +150,8 @@
       <workItem from="1706781384769" duration="958000" />
       <workItem from="1706860913717" duration="8293000" />
       <workItem from="1707122238067" duration="2940000" />
-      <workItem from="1707125813639" duration="2298000" />
+      <workItem from="1707125813639" duration="3736000" />
+      <workItem from="1707206461184" duration="7721000" />
     </task>
     <servers />
   </component>
@@ -172,6 +179,16 @@
           <url>file://$PROJECT_DIR$/app/common/logger/logger.py</url>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/generative/llm/llm_def.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/generative/generative_main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -180,7 +197,8 @@
     <SUITE FILE_PATH="coverage/AiLT$user.coverage" NAME="user 커버리지 결과" MODIFIED="1704964640156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/routers" />
     <SUITE FILE_PATH="coverage/AiLT$llm_test.coverage" NAME="llm_test 커버리지 결과" MODIFIED="1706773208067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/generative-ai/llm-lama2" />
     <SUITE FILE_PATH="coverage/AiLT$webui.coverage" NAME="webui 커버리지 결과" MODIFIED="1706090215024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../WEBUI0.66.2/stable-diffusion-webui" />
-    <SUITE FILE_PATH="coverage/AiLT$ailt_main.coverage" NAME="ailt_main 커버리지 결과" MODIFIED="1707127585280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/AiLT$ailt_main.coverage" NAME="ailt_main 커버리지 결과" MODIFIED="1707214181899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/AiLT$llm_def_test.coverage" NAME="llm_def_test 커버리지 결과" MODIFIED="1707207189745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/generative/llm" />
     <SUITE FILE_PATH="coverage/AiLT$main.coverage" NAME="main 커버리지 결과" MODIFIED="1704964973844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
   </component>
 </project>

@@ -25,7 +25,7 @@ class TestUserService:
         return garbage_data
 
     def insert_user(self):
-        garbage_data = {"acknowledged": True, "inserted_id": 'ObjectId'("60d6f8c00a360a4d477f869a")}
+        garbage_data = {"acknowledged": True, "inserted_id": 'ObjectId'}
         return garbage_data
 
     def delete_user(self):
