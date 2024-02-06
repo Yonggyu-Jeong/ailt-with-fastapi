@@ -1,20 +1,17 @@
-import torch
-from transformers import pipeline, AutoModelForCausalLM
-from generative.llm.llm_def import pipe, model
-
-# TODO torch 및 cuda setup
-print(torch.cuda.is_available())
-model.eval()
+from generative.llm.llm_def import tokenizer, model
 
 
-def ask(x, context='', is_input_full=False):
-    ans = pipe(
-        f"### 질문: {x}\n\n### 맥락: {context}\n\n### 답변:" if context else f"### 질문: {x}\n\n### 답변:",
+def ask(x):
+    answer_format = f"### 질문: {x}\n\n### 답변:"
+    answer = model.generate(
+        **tokenizer(
+            answer_format,
+            return_tensors='pt',
+            return_token_type_ids=False
+        ).to('cuda'),
+        max_new_tokens=50,
+        early_stopping=True,
         do_sample=True,
-        max_new_tokens=512,
-        temperature=0.7,
-        top_p=0.9,
-        return_full_text=False,
         eos_token_id=2,
     )
-    print(ans[0]['generated_text'])
+    print(tokenizer.decode(answer[0]))

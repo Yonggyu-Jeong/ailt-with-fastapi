@@ -1,18 +1,19 @@
 import torch
-from transformers import pipeline, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
-MODEL = 'beomi/KoAlpaca-Polyglot-5.8B'
+print(torch.cuda.is_available())
 
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL,
-    torch_dtype=torch.float16,
-    low_cpu_mem_usage=True,
-).to(device=f"cuda", non_blocking=True)
+MODEL = 'beomi/llama-2-ko-7b'
 
-pipe = pipeline(
-    'text-generation',
-    model=model,
-    tokenizer=MODEL,
-    device=0
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16
 )
+model = AutoModelForCausalLM.from_pretrained(MODEL, quantization_config=bnb_config, device_map={"":0})
 
+tokenizer = AutoTokenizer.from_pretrained(MODEL)
+model = AutoModelForCausalLM.from_pretrained(MODEL)
+
+model.eval()
