@@ -3,8 +3,6 @@ from fastapi import FastAPI
 
 import app.common.dependencies.dependency as dependency
 from app.routers import user_router
-from generative.image import image_router
-from generative.llm import llm_router
 
 """
     fast-api를 구동시 미들웨어 정의, 데이터베이스 초기화, 라우터 정의 합니다.
@@ -25,9 +23,6 @@ database = dependency.get_database()
 #  라우터 전역 의존성에 대해 알아보기. -> app.include에서 의존성 주입 삭제
 
 app.include_router(user_router.router_user, prefix="/user", tags=["user"])
-#app.include_router(image_router.router_image, prefix="/image", tags=["image"])
-app.include_router(llm_router.router_llm, prefix="/llm", tags=["llm"])
-
 
 @app.get("/")
 async def root():

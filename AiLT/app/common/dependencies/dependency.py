@@ -3,10 +3,7 @@ from app.common.configs.config import DbConfig
 from app.services.user_service import UserService
 from app.database.database import Database
 from tests.user_test.test_user_service import TestUserService
-from generative.image.image_def import get_img_config, get_manager
 
-
-# main.py에 의존성 주입
 
 """
     get_database()
