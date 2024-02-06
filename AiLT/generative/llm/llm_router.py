@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException
+
 from generative.llm.llm_service import ask
 
 router_llm = APIRouter()

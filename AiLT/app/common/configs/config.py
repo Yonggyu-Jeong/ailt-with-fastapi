@@ -1,7 +1,8 @@
+import json
 from dataclasses import dataclass
 from pathlib import Path
+
 from app.common.logger.logger import logger
-import json
 
 # JSON 유형의 외부 참조 파일을 읽어오는 코드 config_file 별칭 이용
 with open('./app/config.json', 'r') as config_file:

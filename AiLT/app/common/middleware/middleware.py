@@ -1,4 +1,5 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
+
 app = FastAPI()
 
 # 참조 문서 TODO https://docs.python.org/ko/3/howto/logging.html, https://fastapi.tiangolo.com/advanced/middleware/

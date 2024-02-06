@@ -1,11 +1,12 @@
-from fastapi import HTTPException, Depends, UploadFile
-from pydantic import BaseModel
+import base64
+import json
+from io import BytesIO
+
+import diffusers
 import torch
 from PIL import Image
-from io import BytesIO
-import base64
-import diffusers
-import json
+from fastapi import HTTPException, Depends, UploadFile
+from pydantic import BaseModel
 
 
 class ImgConfig:

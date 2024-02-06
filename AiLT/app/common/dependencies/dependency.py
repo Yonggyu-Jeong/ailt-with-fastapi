@@ -1,9 +1,9 @@
 from fastapi import Depends
-from app.common.configs.config import DbConfig
-from app.services.user_service import UserService
-from app.database.database import Database
-from tests.user_test.test_user_service import TestUserService
 
+from app.common.configs.config import DbConfig
+from app.database.database import Database
+from app.services.user_service import UserService
+from tests.user_test.test_user_service import TestUserService
 
 """
     get_database()

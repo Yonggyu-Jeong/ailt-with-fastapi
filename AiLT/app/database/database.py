@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+
 from app.common.configs.config import DbConfig
 from app.common.logger.logger import logger
 from app.models.model import ModelDto
