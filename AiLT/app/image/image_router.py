@@ -19,12 +19,10 @@ def image_home():
 
 @router_image.get('/test')
 def image_test():
-    test_txt2img()
+    return test_txt2img()
 
 @router_image.post('/txt2img')
 async def stable_txt2img(params: TaskParams, manager: EngineManager = Depends(get_manager)):
-    print("=====================txtimg1")
-
     return await dream('txt2img', params, manager)
 
 

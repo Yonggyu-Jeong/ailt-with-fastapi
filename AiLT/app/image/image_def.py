@@ -8,6 +8,7 @@ from typing import Optional
 from fastapi import HTTPException, Depends, UploadFile
 from pydantic import BaseModel
 
+
 class ImgConfig:
     def __init__(self, hf_token, custom_models):
         self.hf_token = hf_token

@@ -6,7 +6,7 @@ from app.image.image_def import (TaskParams, EngineManager,
 
 
 async def dream(task: str, params: TaskParams, manager: EngineManager):
-    engine = manager.add_engine(task)
+    engine = manager.get_engine(task)
     output_data = {}
 
     try:
