@@ -1,12 +1,12 @@
-from fastapi import HTTPException, Depends, UploadFile
-from pydantic import BaseModel
 import torch
-from PIL import Image
-from io import BytesIO
 import base64
 import diffusers
 import json
-
+from PIL import Image
+from io import BytesIO
+from typing import Optional
+from fastapi import HTTPException, Depends, UploadFile
+from pydantic import BaseModel
 
 class ImgConfig:
     def __init__(self, hf_token, custom_models):
@@ -17,15 +17,33 @@ class ImgConfig:
 class TaskParams(BaseModel):
     seed: int = 0
     num_outputs: int = 1
-    prompt: str = None
-    init_image: UploadFile = None
-    mask_image: UploadFile = None
+    prompt: Optional[str] = None
+    init_image: Optional[UploadFile] = None
+    mask_image: Optional[UploadFile] = None
     num_inference_steps: int = 100
     guidance_scale: float = 7.5
     eta: float = 0.0
     width: int = 512
     height: int = 512
     strength: float = 0.7
+
+    def __init__(self, data_model: Optional[BaseModel] = None, **kwargs):
+        super().__init__(**kwargs)
+        if data_model is not None:
+            self.process_model(data_model)
+
+    def process_model(self, data_model: BaseModel):
+        self.seed = data_model.seed
+        self.num_outputs = data_model.num_outputs
+        self.prompt = data_model.prompt
+        self.init_image = data_model.init_image
+        self.mask_image = data_model.mask_image
+        self.num_inference_steps = data_model.num_inference_steps
+        self.guidance_scale = data_model.guidance_scale
+        self.eta = data_model.eta
+        self.width = data_model.width
+        self.height = data_model.height
+        self.strength = data_model.strength
 
 
 class Engine(object):
@@ -96,6 +114,7 @@ def get_img_config():
 
 
 def get_manager(config: ImgConfig = Depends(get_img_config)):
+    config = get_img_config()
     manager = EngineManager()
     manager.add_engine('txt2img', EngineStableDiffusion(diffusers.StableDiffusionPipeline, config, sibling=None))
     manager.add_engine('img2img', EngineStableDiffusion(diffusers.StableDiffusionImg2ImgPipeline,

@@ -6,8 +6,7 @@ from app.image.image_def import (TaskParams, EngineManager,
 
 
 async def dream(task: str, params: TaskParams, manager: EngineManager):
-    engine = manager.get_engine(task)
-    print("동작중입니다=======================================================")
+    engine = manager.add_engine(task)
     output_data = {}
 
     try:
