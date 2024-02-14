@@ -21,8 +21,8 @@ class TaskParams(BaseModel):
     prompt: Optional[str] = None
     init_image: Optional[UploadFile] = None
     mask_image: Optional[UploadFile] = None
-    num_inference_steps: int = 100
-    guidance_scale: float = 7.5
+    num_inference_steps: int = 50
+    guidance_scale: float = 5.0
     eta: float = 0.0
     width: int = 512
     height: int = 512

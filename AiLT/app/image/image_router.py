@@ -1,6 +1,5 @@
-from fastapi import HTTPException, Depends, UploadFile, APIRouter
-from fastapi.responses import JSONResponse
-from app.image.image_def import get_img_config, get_manager, EngineManager, TaskParams, ImgConfig
+from fastapi import Depends, APIRouter
+from app.image.image_def import get_manager, EngineManager, TaskParams
 from app.image.image_service import dream
 import warnings
 
@@ -17,9 +16,11 @@ def image_home():
     return {"message": "Hello image"}
 
 
-@router_image.get('/test')
-def image_test():
-    return test_txt2img()
+@router_image.post('/test')
+async def img_test(params: TaskParams, manager: EngineManager = Depends(get_manager)):
+    base64 = await dream('txt2img', params, manager)
+    base64('images')
+    #return test_txt2img()
 
 @router_image.post('/txt2img')
 async def stable_txt2img(params: TaskParams, manager: EngineManager = Depends(get_manager)):

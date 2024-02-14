@@ -47,11 +47,15 @@ async def dream(task: str, params: TaskParams, manager: EngineManager):
                 'mime_type': 'image/png',
                 'nsfw': result['nsfw']
             })
+
         output_data['images'] = images
+        print("==============================================")
+        print(output_data)
+        print("==============================================")
+
     except RuntimeError as e:
         output_data['status'] = 'failure'
-        output_data[
-            'message'] = 'A RuntimeError occurred. You probably ran out of GPU memory. Check the server logs for more details.'
+        output_data['message'] = 'A RuntimeError occurred. You probably ran out of GPU memory. Check the server logs for more details.'
         print(str(e))
         raise HTTPException(status_code=500, detail=output_data)
 
