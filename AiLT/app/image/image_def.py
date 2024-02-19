@@ -15,6 +15,13 @@ class ImgConfig:
         self.custom_models = custom_models
 
 
+class ImageInfo(BaseModel):
+    base64: str
+    seed: int
+    mime_type: str
+    nsfw: bool
+
+
 class TaskParams(BaseModel):
     seed: int = 0
     num_outputs: int = 1
@@ -152,3 +159,14 @@ def is_cuda_available():
             return 'cpu'
     except ImportError:
         return 'cpu'
+
+
+def get_decoded_images(json_data: dict):
+    decoded_images = []
+    for image_data in json_data["images"]:
+        base64_data = image_data["base64"]
+        decoded_image = base64.b64decode(base64_data)
+        image_info = ImageInfo(**image_data)
+        image_info.base64 = decoded_image.decode("utf-8")
+        decoded_images.append(image_info)
+    return decoded_images
