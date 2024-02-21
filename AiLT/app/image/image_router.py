@@ -1,5 +1,7 @@
-from fastapi import Depends, APIRouter
-from app.image.image_def import get_manager, EngineManager, TaskParams
+from fastapi import Depends, APIRouter, UploadFile
+from starlette.responses import FileResponse, JSONResponse
+
+from app.image.image_def import get_manager, EngineManager, TaskParams, get_decoded_images, ImageInfo
 from app.image.image_service import dream
 import warnings
 
@@ -18,9 +20,10 @@ def image_home():
 
 @router_image.post('/test')
 async def img_test(params: TaskParams, manager: EngineManager = Depends(get_manager)):
-    base64 = await dream('txt2img', params, manager)
-    base64('images')
-    #return test_txt2img()
+    decoded_images = get_decoded_images(await dream('txt2img', params, manager))
+    return decoded_images
+    #return JSONResponse(content=[decoded_images])
+
 
 @router_image.post('/txt2img')
 async def stable_txt2img(params: TaskParams, manager: EngineManager = Depends(get_manager)):

@@ -1,6 +1,7 @@
 from fastapi import HTTPException
 from fastapi.responses import JSONResponse
 import torch
+from numba import cuda
 from app.image.image_def import (TaskParams, EngineManager,
                                  is_cuda_available, pil_to_b64, b64_to_pil)
 
@@ -49,14 +50,13 @@ async def dream(task: str, params: TaskParams, manager: EngineManager):
             })
 
         output_data['images'] = images
-        print("==============================================")
-        print(output_data)
-        print("==============================================")
 
     except RuntimeError as e:
         output_data['status'] = 'failure'
         output_data['message'] = 'A RuntimeError occurred. You probably ran out of GPU memory. Check the server logs for more details.'
+        cuda.get_current_device().reset()
+
         print(str(e))
         raise HTTPException(status_code=500, detail=output_data)
 
-    return JSONResponse(content=output_data)
+    return output_data

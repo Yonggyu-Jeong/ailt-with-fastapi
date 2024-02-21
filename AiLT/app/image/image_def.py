@@ -7,6 +7,7 @@ from io import BytesIO
 from typing import Optional
 from fastapi import HTTPException, Depends, UploadFile
 from pydantic import BaseModel
+from starlette.responses import JSONResponse
 
 
 class ImgConfig:
@@ -15,11 +16,12 @@ class ImgConfig:
         self.custom_models = custom_models
 
 
-class ImageInfo(BaseModel):
-    base64: str
-    seed: int
-    mime_type: str
-    nsfw: bool
+class ImageInfo:
+    def __init__(self, image_base64, seed, mime_type, nsfw):
+        self.base64 = image_base64
+        self.seed = seed
+        self.mime_type = mime_type
+        self.nsfw = nsfw
 
 
 class TaskParams(BaseModel):
@@ -161,12 +163,12 @@ def is_cuda_available():
         return 'cpu'
 
 
-def get_decoded_images(json_data: dict):
+def get_decoded_images(image_dict):
     decoded_images = []
-    for image_data in json_data["images"]:
-        base64_data = image_data["base64"]
-        decoded_image = base64.b64decode(base64_data)
-        image_info = ImageInfo(**image_data)
-        image_info.base64 = decoded_image.decode("utf-8")
-        decoded_images.append(image_info)
+    if "images" in image_dict:
+        for image_data in image_dict["images"]:
+            base64_data = image_data.get("base64", "")
+            decoded_image = b64_to_pil(base64_data)
+            decoded_images.append(decoded_image)
+
     return decoded_images
