@@ -2,6 +2,8 @@ from app.llm.llm_def import tokenizer, model
 
 
 def ask(x):
+    print(x)
+
     answer_format = f"### 질문: {x}\n\n### 답변:"
     answer = model.generate(
         **tokenizer(
@@ -14,4 +16,5 @@ def ask(x):
         do_sample=True,
         eos_token_id=2,
     )
-    print(tokenizer.decode(answer[0]))
+
+    return tokenizer.decode(answer[0])

@@ -10,10 +10,10 @@ def llm_home():
 
 
 @router_llm.get('/ask')
-def llm_ask(text: str):
+async def llm_ask():
     try:
         text = "건강하게 살기 위한 세 가지 방법은?"
-        return ask(text)
+        return await ask(text)
 
 
     except Exception as e:
