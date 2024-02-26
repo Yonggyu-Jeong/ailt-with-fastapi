@@ -16,6 +16,15 @@ class ImgConfig:
         self.custom_models = custom_models
 
 
+# TODO ImgConfig 표준화및 수정
+'''
+    def __init__(self, hf_token, custom_models, url_path: Optional[str] = None):
+        self.hf_token = hf_token
+        self.custom_models = custom_models
+        self.url_path = url_path
+'''
+
+
 class ImageInfo:
     def __init__(self, image_base64, seed, mime_type, nsfw):
         self.base64 = image_base64
@@ -68,7 +77,9 @@ class EngineStableDiffusion(Engine):
     def __init__(self, pipe, config, sibling=None, custom_model_path=None, requires_safety_checker=True):
         super().__init__()
         if sibling is None:
+#            self.engine = pipe.from_pretrained('runwayml/stable-diffusion-v1-5')
             self.engine = pipe.from_pretrained('runwayml/stable-diffusion-v1-5', use_auth_token=config.hf_token.strip())
+
         elif custom_model_path:
             if requires_safety_checker:
                 self.engine = diffusers.StableDiffusionPipeline.from_pretrained(custom_model_path,

@@ -1,4 +1,4 @@
-from fastapi import Depends, APIRouter, UploadFile
+from fastapi import Depends, APIRouter
 from starlette.responses import FileResponse, JSONResponse
 
 from app.image.image_def import get_manager, EngineManager, TaskParams, get_decoded_images, ImageInfo
