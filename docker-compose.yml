@@ -3,7 +3,7 @@ version: '3'
 services:
   app:
     build:
-      context: .
+      context: AiLT
       dockerfile: Dockerfile
     ports:
       - "8000:8000"

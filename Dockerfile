@@ -8,7 +8,7 @@ LABEL authors="YongGyu"
 
 WORKDIR /app
 
-COPY . /app
+COPY AiLT /app
 
 RUN apt-get update && apt-get install -y fonts-nanum
 

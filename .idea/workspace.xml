@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b548baa9-cfcf-4b30-9613-c79cb39eaef3" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/.idea/ailt-with-fastapi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/.idea/AiLT.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/configs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/configs/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/configs/custom_model_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/configs/custom_model_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/configs/image_token_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/configs/image_token_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/image/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/image/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/image/image_def.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/image/image_def.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/image/image_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/image/image_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/image/image_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/image/image_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/llm/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/llm/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/llm/llm_def.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/llm/llm_def.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/llm/llm_def_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/llm/llm_def_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/llm/llm_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/llm/llm_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/llm/llm_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/llm/llm_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/speech/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/speech/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/speech/speech_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/speech/speech_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/speech/speech_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/speech/speech_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/translate/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/translate/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/translate/test_translate.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/translate/test_translate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/app/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/log/error_log_2024-01-15.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/error_log_2024-01-15.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/log/error_log_2024-01-16.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/error_log_2024-01-16.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/log/error_log_2024-01-20.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/error_log_2024-01-20.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/requirements_docker.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements_docker.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/test_main.http" beforeDir="false" afterPath="$PROJECT_DIR$/test_main.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/tests/image_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/image_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/tests/user_test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_test/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/tests/user_test/compare_user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_test/compare_user_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AiLT/tests/user_test/test_user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/user_test/test_user_service.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2e2TLstUzX9Iysa7Q8Kn4afusDO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "FastAPI.AiLT.executor": "Run",
+    "FastAPI.app.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "ailt-with-ml",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/PR/ailt-with-fastapi",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2023.3.5\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PR\ailt-with-fastapi" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="Python.FastAPI">
+      <option name="additionalOptions" value="--reload --port 8000" />
+      <option name="appName" value="app" />
+      <option name="file" value="C:\PR\ailt-with-fastapi\app\main.py" />
+      <module name="ailt-with-fastapi" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\PR\ailt-with-fastapi\venv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.10 (ailt-with-fastapi)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b548baa9-cfcf-4b30-9613-c79cb39eaef3" name="Changes" comment="" />
+      <created>1711101623881</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711101623881</updated>
+      <workItem from="1711101625758" duration="1039000" />
+      <workItem from="1711104295943" duration="434000" />
+      <workItem from="1711104751527" duration="1847000" />
+      <workItem from="1711173343417" duration="1694000" />
+      <workItem from="1711175676360" duration="135000" />
+      <workItem from="1711175813683" duration="1266000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app/llm/llm_router.py</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ailt_with_fastapi$main.coverage" NAME="main 커버리지 결과" MODIFIED="1711175000805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AiLT/app" />
+    <SUITE FILE_PATH="coverage/ailt_with_fastapi$app.coverage" NAME="app 커버리지 결과" MODIFIED="1711180309083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ailt_with_fastapi$AiLT.coverage" NAME="AiLT 커버리지 결과" MODIFIED="1711175250018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>
