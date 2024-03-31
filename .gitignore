@@ -1,6 +1,4 @@
 
 AiLT/app/config.json
-AiLT/app/common/configs/custom_model_config.json
-AiLT/app/common/configs/image_token_config.json
-AiLT/app/common/configs/image_token_config.json
-AiLT/app/common/configs/custom_model_config.json
+app/common/configs/custom_model_config.json
+app/common/configs/image_token_config.json
